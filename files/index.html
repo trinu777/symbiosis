@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Symbiosis Temple | Electronic Music Experience</title>
+<meta name="description" content="Symbiosis Temple — productora de música electrónica de Santiago del Estero, Argentina. Próximo evento, entradas, galería y ubicación.">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Symbiosis Temple | Electronic Music Experience">
+<meta property="og:description" content="Music. Connection. Experience. Productora de música electrónica de Santiago del Estero, Argentina.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/logo/symbiosis-mark.svg">
+
+<link rel="icon" href="assets/logo/symbiosis-mark.svg" type="image/svg+xml">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ============ INTRO / LOGO REVEAL ============ -->
+<div class="intro" id="intro" aria-hidden="true">
+  <img src="assets/logo/symbiosis-mark.svg" alt="" class="intro__mark">
+</div>
+
+<!-- ============ NAVBAR ============ -->
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="#" class="nav__logo" aria-label="Symbiosis Temple — inicio">
+      <img src="assets/logo/symbiosis-mark.svg" alt="Symbiosis Temple">
+    </a>
+
+    <nav class="nav__links" aria-label="Navegación principal">
+      <a href="#event">Events</a>
+      <a href="#experience">Experience</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#location">Location</a>
+      <a href="#community">Contact</a>
+    </nav>
+
+    <a class="nav__tickets" href="https://www.passline.com/eventos/nacho-bolognani-symbiosis-sde?fbclid=PAdGRleAUGj_hwZG9mAmZkaWQWUNt5p2Z7was7JkwERwHZvMlFESf2ZmV4dG4DYWVtAjExAHNydGMGYXBwX2lkDzEyNDAyNDU3NDI4NzQxNAABp_tJlUmgQTsUXOgIyXSKNhoA3nC5AogmcqTg2aErtDW7UpP689GbJNOoP5A6_aem_KXXkY2bFWEol131zxsP7lw&utm_id=97760_v0_s00_e0_tv6_a1denngo7zzr8e" target="_blank" rel="noopener noreferrer">Tickets</a>
+
+    <button class="nav__burger" id="burgerBtn" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ============ MOBILE FULLSCREEN MENU ============ -->
+<div class="mobile-menu" id="mobileMenu">
+  <nav aria-label="Navegación móvil">
+    <a href="#event">Events</a>
+    <a href="#experience">Experience</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#location">Location</a>
+    <a href="#community">Contact</a>
+    <a href="https://www.passline.com/eventos/nacho-bolognani-symbiosis-sde?fbclid=PAdGRleAUGj_hwZG9mAmZkaWQWUNt5p2Z7was7JkwERwHZvMlFESf2ZmV4dG4DYWVtAjExAHNydGMGYXBwX2lkDzEyNDAyNDU3NDI4NzQxNAABp_tJlUmgQTsUXOgIyXSKNhoA3nC5AogmcqTg2aErtDW7UpP689GbJNOoP5A6_aem_KXXkY2bFWEol131zxsP7lw&utm_id=97760_v0_s00_e0_tv6_a1denngo7zzr8e" target="_blank" rel="noopener noreferrer" class="mobile-menu__tickets">Tickets</a>
+  </nav>
+</div>
+
+<main>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="hero__bg">
+      <!-- PLACEHOLDER: reemplazar por foto/video real de evento en /assets/video o /assets/gallery -->
+      <img src="https://images.unsplash.com/photo-1571266752264-7a0b5be27637?q=80&w=1920&auto=format&fit=crop" alt="Público en un evento nocturno de Symbiosis Temple, luces y atmósfera de club" loading="eager">
+      <div class="hero__overlay"></div>
+    </div>
+
+    <div class="hero__content">
+      <img src="assets/logo/symbiosis-mark.svg" alt="Symbiosis Temple" class="hero__mark">
+      <h1 class="hero__title">SYMBIOSIS TEMPLE</h1>
+      <p class="hero__tagline">Music. Connection. Experience.</p>
+
+      <div class="hero__ctas">
+        <a href="#event" class="btn btn--solid">Next Event</a>
+        <a href="#experience" class="btn btn--ghost">Discover Symbiosis</a>
+      </div>
+    </div>
+
+    <div class="hero__scroll" aria-hidden="true">
+      <span></span>
+    </div>
+  </section>
+
+  <!-- ============ NEXT EVENT ============ -->
+  <section class="event" id="event">
+    <div class="event__inner">
+      <div class="event__media reveal">
+        <img id="eventImage" src="assets/events/nacho-bolognani.jpg" alt="Flyer del evento Nacho Bolognani en Symbiosis, Santiago del Estero" loading="lazy"
+             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=1400&auto=format&fit=crop';">
+      </div>
+
+      <div class="event__info reveal">
+        <p class="event__eyebrow">Next Event</p>
+        <h2 class="event__artist" id="eventArtist">NACHO BOLOGNANI</h2>
+        <p class="event__meta" id="eventMeta">SYMBIOSIS — SANTIAGO DEL ESTERO</p>
+        <p class="event__datetime" id="eventDatetime"></p>
+
+        <a id="eventTicketBtn" class="btn btn--solid btn--large" href="#" target="_blank" rel="noopener noreferrer">Get Tickets</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ THE EXPERIENCE ============ -->
+  <section class="experience" id="experience">
+    <div class="experience__text reveal">
+      <h2>More than a night.</h2>
+      <p>A space where music, people and atmosphere become one.</p>
+    </div>
+
+    <div class="experience__grid">
+      <div class="experience__img experience__img--tall reveal">
+        <img src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?q=80&w=1200&auto=format&fit=crop" alt="DJ tocando ante una multitud en un evento de Symbiosis" loading="lazy">
+      </div>
+      <div class="experience__img experience__img--short reveal">
+        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=1200&auto=format&fit=crop" alt="Luces y atmósfera nocturna en un evento de Symbiosis" loading="lazy">
+      </div>
+      <div class="experience__img experience__img--short reveal">
+        <img src="https://images.unsplash.com/photo-1531058020387-3be344556be6?q=80&w=1200&auto=format&fit=crop" alt="Público disfrutando de la pista en un evento de Symbiosis" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ GALLERY ============ -->
+  <section class="gallery" id="gallery">
+    <div class="gallery__head reveal">
+      <h2>Gallery</h2>
+      <a href="https://drive.google.com/drive/folders/1XQXpq922OKyMdqFSB9O_jgFQtaaxKQf-" target="_blank" rel="noopener noreferrer" class="link-arrow">View Full Gallery</a>
+    </div>
+
+    <div class="gallery__grid" id="galleryGrid">
+      <!-- PLACEHOLDER: reemplazar por fotos reales en /assets/gallery/ -->
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Vista ampliada de la fotografía">
+    <button class="lightbox__close" id="lightboxClose" aria-label="Cerrar">&times;</button>
+    <img id="lightboxImg" src="" alt="">
+  </div>
+
+  <!-- ============ SYMBIOSIS ON TOUR ============ -->
+  <section class="tour">
+    <p class="tour__eyebrow reveal">Symbiosis on Tour</p>
+    <div class="tour__cities">
+      <span class="reveal">Santiago del Estero</span>
+      <span class="reveal">Córdoba</span>
+      <span class="reveal">Buenos Aires</span>
+      <span class="reveal">Barcelona</span>
+    </div>
+  </section>
+
+  <!-- ============ LOCATION ============ -->
+  <section class="location" id="location">
+    <div class="location__media reveal">
+      <img src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?q=80&w=1200&auto=format&fit=crop" alt="Fachada nocturna del venue de Symbiosis Temple" loading="lazy">
+    </div>
+    <div class="location__info reveal">
+      <h2>The Temple</h2>
+      <p>Pellegrini 480<br>Santiago del Estero<br>Argentina</p>
+      <a href="https://tr.ee/3qpD0ArvKZ" target="_blank" rel="noopener noreferrer" class="btn btn--ghost">Get Directions</a>
+    </div>
+  </section>
+
+  <!-- ============ COMMUNITY ============ -->
+  <section class="community" id="community">
+    <h2 class="reveal">Become part of the experience</h2>
+    <div class="community__links reveal">
+      <a href="https://www.instagram.com/symbiosistemple?igsi=Ymo3eWM1ejIyeDQ1" target="_blank" rel="noopener noreferrer" class="link-arrow link-arrow--large">Instagram</a>
+      <a href="https://wa.me/5493856885495" target="_blank" rel="noopener noreferrer" class="link-arrow link-arrow--large">WhatsApp</a>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="footer__top">
+    <img src="assets/logo/symbiosis-mark.svg" alt="Symbiosis Temple" class="footer__logo">
+    <div class="footer__brand">
+      <p>SYMBIOSIS TEMPLE</p>
+      <p class="footer__location">Santiago del Estero — Argentina</p>
+    </div>
+  </div>
+
+  <nav class="footer__links" aria-label="Enlaces del pie de página">
+    <a href="https://www.instagram.com/symbiosistemple?igsi=Ymo3eWM1ejIyeDQ1" target="_blank" rel="noopener noreferrer">Instagram</a>
+    <a href="https://wa.me/5493856885495" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+    <a href="https://www.passline.com/eventos/nacho-bolognani-symbiosis-sde?fbclid=PAdGRleAUGj_hwZG9mAmZkaWQWUNt5p2Z7was7JkwERwHZvMlFESf2ZmV4dG4DYWVtAjExAHNydGMGYXBwX2lkDzEyNDAyNDU3NDI4NzQxNAABp_tJlUmgQTsUXOgIyXSKNhoA3nC5AogmcqTg2aErtDW7UpP689GbJNOoP5A6_aem_KXXkY2bFWEol131zxsP7lw&utm_id=97760_v0_s00_e0_tv6_a1denngo7zzr8e" target="_blank" rel="noopener noreferrer">Tickets</a>
+    <a href="#gallery">Gallery</a>
+  </nav>
+
+  <p class="footer__copy" id="footerCopy"></p>
+</footer>
+
+<!-- ============ MOBILE STICKY CTA ============ -->
+<div class="sticky-cta" id="stickyCta">
+  <span id="stickyCtaArtist">NACHO BOLOGNANI</span>
+  <a id="stickyCtaBtn" href="#" target="_blank" rel="noopener noreferrer" class="btn btn--solid btn--small">Tickets</a>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
