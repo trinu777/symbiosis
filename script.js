@@ -2,9 +2,6 @@
    SYMBIOSIS TEMPLE — script.js
    ========================================================================== */
 
-
-/* EVENT DATA */
-
 const events = [
   {
     artist: "Nacho Bolognani",
@@ -13,21 +10,18 @@ const events = [
     date: "",
     venue: "",
     image: "./IMG_0928.jpg",
-
-    ticketUrl:
-      "https://www.passline.com/eventos/nacho-bolognani-symbiosis-sde?fbclid=PAdGRleAUGj_hwZG9mAmZkaWQWUNt5p2Z7was7JkwERwHZvMlFESf2ZmV4dG4DYWVtAjExAHNydGMGYXBwX2lkDzEyNDAyNDU3NDI4NzQxNAABp_tJlUmgQTsUXOgIyXSKNhoA3nC5AogmcqTg2aErtDW7UpP689GbJNOoP5A6_aem_KXXkY2bFWEol131zxsP7lw&utm_id=97760_v0_s00_e0_tv6_a1denngo7zzr8e"
+    ticketUrl: "https://www.passline.com/eventos/nacho-bolognani-symbiosis-sde"
   }
 ];
 
 
 /* NEXT EVENT */
 
-function renderNextEvent(){
+function renderNextEvent() {
 
   const next = events[0];
 
-  if(!next) return;
-
+  if (!next) return;
 
   const artist =
     document.getElementById("eventArtist");
@@ -51,112 +45,77 @@ function renderNextEvent(){
     document.getElementById("stickyCtaBtn");
 
 
-  if(artist){
-
+  if (artist) {
     artist.textContent =
       next.artist.toUpperCase();
-
   }
 
-
-  if(meta){
-
+  if (meta) {
     meta.textContent =
       `${next.brand.toUpperCase()} — ${next.city.toUpperCase()}`;
-
   }
 
-
-  if(datetime){
+  if (datetime) {
 
     const parts =
-      [next.date,next.venue]
-        .filter(Boolean);
-
+      [next.date, next.venue].filter(Boolean);
 
     datetime.textContent =
       parts.length
         ? parts.join(" · ")
         : "Fecha y venue: próximamente";
-
   }
 
-
-  if(image){
-
-    image.src =
-      next.image;
-
+  if (image) {
+    image.src = next.image;
     image.alt =
       `Flyer del evento ${next.artist} en ${next.brand}, ${next.city}`;
-
   }
 
-
-  if(ticketBtn){
-
-    ticketBtn.href =
-      next.ticketUrl;
-
+  if (ticketBtn) {
+    ticketBtn.href = next.ticketUrl;
   }
 
-
-  if(stickyArtist){
-
+  if (stickyArtist) {
     stickyArtist.textContent =
       next.artist.toUpperCase();
-
   }
 
-
-  if(stickyBtn){
-
-    stickyBtn.href =
-      next.ticketUrl;
-
+  if (stickyBtn) {
+    stickyBtn.href = next.ticketUrl;
   }
-
 }
 
 
 /* NAVBAR */
 
-function initNavScroll(){
+function initNavScroll() {
 
   const nav =
     document.getElementById("nav");
 
-
-  if(!nav) return;
-
+  if (!nav) return;
 
   const toggle = () => {
-
     nav.classList.toggle(
       "is-scrolled",
       window.scrollY > 40
     );
-
   };
 
-
   toggle();
-
 
   window.addEventListener(
     "scroll",
     toggle,
-    {
-      passive:true
-    }
+    { passive: true }
   );
-
 }
 
 
 /* MOBILE MENU */
 
-function initMobileMenu(){
+function initMobileMenu() {
 
   const burger =
     document.getElementById("burgerBtn");
@@ -167,79 +126,57 @@ function initMobileMenu(){
   const stickyCta =
     document.getElementById("stickyCta");
 
-
-  if(!burger || !menu) return;
-
+  if (!burger || !menu) return;
 
   const links =
     menu.querySelectorAll("a");
 
-
   const close = () => {
 
-    menu.classList.remove(
-      "is-open"
-    );
-
+    menu.classList.remove("is-open");
 
     burger.setAttribute(
       "aria-expanded",
       "false"
     );
 
-
     burger.setAttribute(
       "aria-label",
       "Abrir menú"
     );
 
+    document.body.style.overflow = "";
 
-    document.body.style.overflow =
-      "";
-
-
-    if(stickyCta){
-
+    if (stickyCta) {
       stickyCta.classList.remove(
         "is-hidden-menu"
       );
-
     }
-
   };
 
 
   const open = () => {
 
-    menu.classList.add(
-      "is-open"
-    );
-
+    menu.classList.add("is-open");
 
     burger.setAttribute(
       "aria-expanded",
       "true"
     );
 
-
     burger.setAttribute(
       "aria-label",
       "Cerrar menú"
     );
 
-
     document.body.style.overflow =
       "hidden";
 
-
-    if(stickyCta){
-
+    if (stickyCta) {
       stickyCta.classList.add(
         "is-hidden-menu"
       );
-
     }
-
   };
 
 
@@ -252,159 +189,115 @@ function initMobileMenu(){
           "is-open"
         );
 
-
-      if(isOpen){
-
+      if (isOpen) {
         close();
-
-      }else{
-
+      } else {
         open();
-
       }
-
     }
   );
 
 
-  links.forEach(
-    (link) => {
-
-      link.addEventListener(
-        "click",
-        close
-      );
-
-    }
-  );
-
+  links.forEach((link) => {
+    link.addEventListener(
+      "click",
+      close
+    );
+  });
 }
 
 
 /* REVEAL */
 
-function initReveal(){
+function initReveal() {
 
   const items =
     document.querySelectorAll(
       ".reveal"
     );
 
-
-  if(
+  if (
     !("IntersectionObserver" in window)
-  ){
+  ) {
 
-    items.forEach(
-      (el) => {
-
-        el.classList.add(
-          "is-visible"
-        );
-
-      }
-    );
+    items.forEach((el) => {
+      el.classList.add(
+        "is-visible"
+      );
+    });
 
     return;
-
   }
 
 
   const observer =
     new IntersectionObserver(
-
       (entries) => {
 
         entries.forEach(
           (entry) => {
 
-            if(
+            if (
               entry.isIntersecting
-            ){
+            ) {
 
-              entry.target
-                .classList.add(
-                  "is-visible"
-                );
-
+              entry.target.classList.add(
+                "is-visible"
+              );
 
               observer.unobserve(
                 entry.target
               );
-
             }
-
           }
         );
-
       },
-
       {
-        threshold:0.15,
+        threshold: 0.15,
         rootMargin:
           "0px 0px -60px 0px"
       }
-
     );
 
 
-  items.forEach(
-    (el) => {
-
-      observer.observe(el);
-
-    }
-  );
-
+  items.forEach((el) => {
+    observer.observe(el);
+  });
 }
 
 
-/* GALLERY LIGHTBOX */
+/* GALLERY */
 
-function initGalleryLightbox(){
+function initGalleryLightbox() {
 
   const galleryImages =
     document.querySelectorAll(
       ".gallery__item img"
     );
 
+  galleryImages.forEach((img) => {
 
-  galleryImages.forEach(
-    (img) => {
+    const item =
+      img.closest(".gallery__item");
 
-      const item =
-        img.closest(
-          ".gallery__item"
+    if (!item) return;
+
+    item.addEventListener(
+      "click",
+      () => {
+        openLightbox(
+          img.src,
+          img.alt
         );
-
-
-      if(!item) return;
-
-
-      item.addEventListener(
-        "click",
-        () => {
-
-          openLightbox(
-            img.src,
-            img.alt
-          );
-
-        }
-      );
-
-    }
-  );
-
+      }
+    );
+  });
 }
 
 
 /* OPEN LIGHTBOX */
 
-function openLightbox(
-  src,
-  alt
-){
+function openLightbox(src, alt) {
 
   const lightbox =
     document.getElementById(
@@ -416,63 +309,42 @@ function openLightbox(
       "lightboxImg"
     );
 
+  if (!lightbox || !img) return;
 
-  if(
-    !lightbox ||
-    !img
-  ) return;
+  img.src = src;
+  img.alt = alt;
 
-
-  img.src =
-    src;
-
-
-  img.alt =
-    alt;
-
-
-  lightbox
-    .classList
-    .add(
-      "is-open"
-    );
-
+  lightbox.classList.add(
+    "is-open"
+  );
 
   document.body.style.overflow =
     "hidden";
-
 }
 
 
 /* CLOSE LIGHTBOX */
 
-function closeLightbox(){
+function closeLightbox() {
 
   const lightbox =
     document.getElementById(
       "lightbox"
     );
 
+  if (!lightbox) return;
 
-  if(!lightbox) return;
+  lightbox.classList.remove(
+    "is-open"
+  );
 
-
-  lightbox
-    .classList
-    .remove(
-      "is-open"
-    );
-
-
-  document.body.style.overflow =
-    "";
-
+  document.body.style.overflow = "";
 }
 
 
 /* LIGHTBOX CONTROLS */
 
-function initLightboxControls(){
+function initLightboxControls() {
 
   const lightbox =
     document.getElementById(
@@ -484,60 +356,47 @@ function initLightboxControls(){
       "lightboxClose"
     );
 
+  if (!lightbox) return;
 
-  if(!lightbox) return;
-
-
-  if(closeButton){
-
+  if (closeButton) {
     closeButton.addEventListener(
       "click",
       closeLightbox
     );
-
   }
-
 
   lightbox.addEventListener(
     "click",
     (event) => {
 
-      if(
+      if (
         event.target === lightbox
-      ){
-
+      ) {
         closeLightbox();
-
       }
-
     }
   );
-
 
   document.addEventListener(
     "keydown",
     (event) => {
 
-      if(
+      if (
         event.key === "Escape" &&
         lightbox.classList.contains(
           "is-open"
         )
-      ){
-
+      ) {
         closeLightbox();
-
       }
-
     }
   );
-
 }
 
 
-/* MOBILE STICKY CTA */
+/* MOBILE CTA */
 
-function initStickyCta(){
+function initStickyCta() {
 
   const cta =
     document.getElementById(
@@ -549,12 +408,7 @@ function initStickyCta(){
       ".hero"
     );
 
-
-  if(
-    !cta ||
-    !hero
-  ) return;
-
+  if (!cta || !hero) return;
 
   const toggle = () => {
 
@@ -563,68 +417,51 @@ function initStickyCta(){
         .getBoundingClientRect()
         .bottom;
 
-
     cta.classList.toggle(
       "is-visible",
       heroBottom < 0
     );
-
   };
 
-
   toggle();
-
 
   window.addEventListener(
     "scroll",
     toggle,
-    {
-      passive:true
-    }
+    { passive: true }
   );
-
 }
 
 
 /* FOOTER */
 
-function renderFooterCopy(){
+function renderFooterCopy() {
 
   const el =
     document.getElementById(
       "footerCopy"
     );
 
-
-  if(!el) return;
-
+  if (!el) return;
 
   el.textContent =
     `© ${new Date().getFullYear()} SYMBIOSIS`;
-
 }
 
 
-/* INITIALIZE */
+/* INIT */
 
 document.addEventListener(
   "DOMContentLoaded",
   () => {
 
     renderNextEvent();
-
     initNavScroll();
-
     initMobileMenu();
-
     initGalleryLightbox();
-
     initLightboxControls();
-
     initReveal();
-
     initStickyCta();
-
     renderFooterCopy();
 
   }
