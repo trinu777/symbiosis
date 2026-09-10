@@ -12,7 +12,7 @@ const events = [
     city: "Santiago del Estero",
     date: "",
     venue: "",
-    image: "assets/events/nacho-bolognani.jpg",
+    image: "IMG_0836.jpg",
     ticketUrl: "https://www.passline.com/eventos/nacho-bolognani-symbiosis-sde?fbclid=PAdGRleAUGj_hwZG9mAmZkaWQWUNt5p2Z7was7JkwERwHZvMlFESf2ZmV4dG4DYWVtAjExAHNydGMGYXBwX2lkDzEyNDAyNDU3NDI4NzQxNAABp_tJlUmgQTsUXOgIyXSKNhoA3nC5AogmcqTg2aErtDW7UpP689GbJNOoP5A6_aem_KXXkY2bFWEol131zxsP7lw&utm_id=97760_v0_s00_e0_tv6_a1denngo7zzr8e"
   }
 ];
